@@ -6,12 +6,27 @@ import os
 cg = CoinGeckoAPI()
 t = datetime.now()
 t_string = t.strftime("%d/%m/%Y %H:%M:%S")
-def writetofile():
-    btcprice = open("btcprices.txt", "a")
-    if(os.path.getsize("btcprices.txt") > 0):
-            btcprice.write("\n"+str(cg.get_price(ids='bitcoin', vs_currencies='usd')) + " "+ t_string)
+bitcoin = "bitcoin"
+litecoin = "litecoin"
+usd = "usd"
+def writecoins():
+    coins = open("coins.txt", "a")
+    done = open("coinsalreadywritten.txt", "a")
+    if(os.path.getsize("coins.txt") > 0):
+        donothing = 0
+        #coinsalreadywritten.write("")
     else:
-            btcprice.write(str(cg.get_price(ids='bitcoin', vs_currencies='usd')) + " "+ t_string)
+        coins.write(str(cg.get_supported_vs_currencies()))
+def writetofile(coin, tradedcoin):
+    coinname = coin+"prices.txt"
+    cointext = open(coinname, "a")
+    if(os.path.getsize(coinname) > 0):
+            cointext.write("\n"+str(cg.get_price(ids=coin, vs_currencies=tradedcoin)) + " "+ t_string)
+    else:
+            cointext.write(str(cg.get_price(ids=coin, vs_currencies=tradedcoin)) + " "+ t_string)
 
 
-writetofile()
+writetofile(bitcoin, usd)
+writetofile(litecoin, usd)
+
+writecoins()
