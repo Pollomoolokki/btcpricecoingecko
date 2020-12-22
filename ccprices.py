@@ -3,6 +3,8 @@ import json
 from datetime import datetime
 import os
 
+#todo: tee logiikka tokenien hinnan kirjoitukseen
+
 cg = CoinGeckoAPI() #tehdaan cg apista
 t = datetime.now() #otetaan aika
 t_string = t.strftime("%d/%m/%Y %H:%M:%S") #formatoidaan aika
