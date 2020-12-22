@@ -14,11 +14,15 @@ usd = "usd"
 #ei tulosta mitaan jos txt olemassa
 def writecoins():
     coins = open("apicoins.txt", "a")
-    #done = open("coinsalreadywritten.txt", "a")
     if(os.path.getsize("apicoins.txt") > 0):
         coins.close()
     else:
-        coins.write(str(cg.get_supported_vs_currencies()))
+        supportedcoins = cg.get_coins_list()
+        for scoins in supportedcoins:
+            coins.write(scoins['name']+"\n")
+            #print(scoins['name'])
+        #print(supportedcoins[0])
+        #coins.write(str(cg.get_supported_vs_currencies()))
         coins.close()
 #writetofile kirjoittaa coins.txt -tiedostossa olevat kolikot erillisin tiedostoihin kolikko+prices.txt muodossa
 #tulostaa kolikon nimen, hinnan(usd) ja ajan
