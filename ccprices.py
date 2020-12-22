@@ -10,9 +10,9 @@ bitcoin = "bitcoin"
 litecoin = "litecoin"
 usd = "usd"
 def writecoins():
-    coins = open("coins.txt", "a")
+    coins = open("apicoins.txt", "a")
     #done = open("coinsalreadywritten.txt", "a")
-    if(os.path.getsize("coins.txt") > 0):
+    if(os.path.getsize("apicoins.txt") > 0):
         coins.close()
         donothing = 0
         #coinsalreadywritten.write("")
