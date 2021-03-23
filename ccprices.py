@@ -5,6 +5,8 @@ import os
 
 #todo: tee logiikka tokenien hinnan kirjoitukseen
 
+#README: tarvitsee coins.txt, jossa apicoins.txt poimitut kolikot, joiden hinnat ohjelma kirjoittaa.
+
 cg = CoinGeckoAPI() #tehdaan cg apista
 t = datetime.now() #otetaan aika
 t_string = t.strftime("%d/%m/%Y %H:%M:%S") #formatoidaan aika
@@ -31,9 +33,11 @@ def writetofile(coin, tradedcoin):
     else:
             cointext.write(str(cg.get_price(ids=coin, vs_currencies=tradedcoin)) + " "+ t_string)
             cointext.close()
-#avaa coins.txt tiedoston ja poistaa newlinet
+#kirjoitetaan kolikot tiedostoon ekana
+writecoins()
+#avaa coins.txt tiedoston ja poistaa newlinet. Vahingossa tulee myös prices.txt, joka on tyhjä.
 temp = open("coins.txt",'r').read().split('\n')
 #kay lapi kolikot
 for line in temp:
     writetofile(line, usd)
-writecoins()
+
