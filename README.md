@@ -26,6 +26,11 @@ Output from the program can be imported to a spreadsheet
 Output: JSON with 3 pairs + DATE TIME. Pairs: coinname,FIAT,coinprice
 
 TODO/WISHLIST
+
+Try-catch for methods os.open CoinGeckoAPI.get_price 
+
+TESTS!
+
 anything in ccprices.log
 
 clean JSON output to 3x COIN FIAT PRICE + DATE TIME 
