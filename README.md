@@ -1,6 +1,7 @@
 # btcpricecoingecko
 Prints out cryptocurrency prices to a text file. Uses USD,EUR and Bitcoin as FIAT
 
+Output from the program can be imported to a spreadsheet
 
 Needs the goingecko api!
 https://github.com/man-c/pycoingecko
@@ -22,7 +23,6 @@ as a cronjob
 
 everyday at 13:38. Prints console output to /tmp/ccprices.log
 
-Output from the program can be imported to a spreadsheet
 Output: JSON with 3 pairs + DATE TIME. Pairs: coinname,FIAT,coinprice
 
 TODO/WISHLIST
