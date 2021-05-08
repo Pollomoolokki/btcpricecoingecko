@@ -50,7 +50,6 @@ def writetofile(coin, usd, euro, btc):
 writecoins()
 #open coins.txt and remove newlines. makes empty prices.txt by 'accident'
 temp = open("coins.txt",'r').read().split('\n')
-#kay lapi kolikot
 #write all found coins from coins.txt to separate prices.txt files
 for line in temp:
     writetofile(line, usd, eur, btc)
