@@ -24,3 +24,4 @@ Output: JSON with 3 pairs + DATE TIME. Pairs: coinname,FIAT,coinprice
 TODO/WISHLIST
 anything in ccprices.log
 clean JSON output to 3x COIN FIAT PRICE + DATE TIME 
+fix the happy accident in the last for each -loop
