@@ -6,6 +6,7 @@ Needs the goingecko api!
 https://github.com/man-c/pycoingecko
 
 Prints apicoins.txt
+
 Bitcoinprices.txt
 coins.txt file is read on usage. Copy coins from apicoins.txt to coins.txt one per line to specify which coin prices to print. Default is Bitcoin
 
